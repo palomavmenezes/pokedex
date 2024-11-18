@@ -28,7 +28,7 @@ Para rodar o projeto, você precisa de:
 
 1. **Clone este repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/pokemon-pokedex.git
+   git clone https://github.com/palomavmenezes/pokedex.git
 2. Abra a pasta no VS Code
 3. Com o plugin Live Server instalado, clique com o botão direito no arquivo index.html e selecione "Abrir com Live Server"
 

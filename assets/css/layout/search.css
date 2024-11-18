@@ -1,0 +1,35 @@
+.search-bar {
+  margin: 2rem 0;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & input {
+    width: -webkit-fill-available;
+    max-width: 500px;
+    padding: 10px 30px;
+    gap: 4px;
+    border-radius: 30px;
+    opacity: 0px;
+    border: none;
+    background-color: #F2F2F7;
+    color: #49454F;
+  }
+
+  & select {
+    border: none;
+    background: #F2F2F7;
+    padding: 9px 10px;
+    color: #49454F;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    text-align: center;
+    margin: 1rem 0 0;
+    & select {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header>
+    <a href="/index.html">
+      <img src="/assets/img/logo-pokedex.png" alt="" width="124px">
+    </a>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/pokedex.html">Pokédex</a></li>
+    </ul>
+    
+  </header>
+  <main>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Faça uma busca pelo nome do pokémon">
+      <select id="type-filter">
+        <option value="">Filtre pelo Elemento do Pokémon</option>
+      </select>
+    </div>
+    <div class="container" id="pokedex">
+
+    </div>
+  </main>
+  <footer>
+    <div id="pagination" class="pagination"></div>
+  </footer>
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <div id="pokemon-details"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

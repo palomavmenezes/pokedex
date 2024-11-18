@@ -33,13 +33,15 @@
     }
 
     & footer {
-      display: flex;
-      gap: 15px;
+      display: flow-root;
       margin: 0;
 
       & p {
-        border: 1px solid black;
-        padding: 5px 10px;
+        font-weight: 600;
+        padding: 8px 10px;
+        background: #356ABC;
+        color: #FFCD00;
+        margin: 5px 0;
       }
     }
   }
@@ -55,7 +57,7 @@
   font-weight: bold;
 
   @media (max-width: 480px) {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 

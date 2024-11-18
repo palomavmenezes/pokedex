@@ -102,7 +102,7 @@ function renderPage() {
       </div>
     `;
     
-    card.addEventListener('mouseenter', (event) => showTooltip(event, 'Clique para ver informações'));
+    card.addEventListener('mouseenter', (event) => showTooltip(event, 'Clique para ver informações do Pokémon'));
     card.addEventListener('mouseleave', hideTooltip);
 
     card.addEventListener('click', () => showDetails(pokemon.url));
@@ -121,8 +121,13 @@ function showTooltip(event, text) {
   document.body.appendChild(tooltip);
 
   const { top, left, width } = event.target.getBoundingClientRect();
-  tooltip.style.top = `${top - 30}px`;
-  tooltip.style.left = `${left + width / 2}px`;
+
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  const tooltipHeight = tooltip.offsetHeight;
+  tooltip.style.top = `${top + scrollTop - tooltipHeight - 10}px`; // Acima do elemento com margem
+  tooltip.style.left = `${left + scrollLeft + width / 2 - tooltip.offsetWidth / 2}px`; // Centralizar horizontalmente
 }
 
 function hideTooltip() {
@@ -251,9 +256,10 @@ async function showDetails(url) {
         <h2>Quem é esse Pokémon? É o ${capitalizeFirstLetter(pokemonData.name)}</h2>
         <img src="${imageUrl}" alt="${pokemonData.name}">
         <footer>
-          <p>Altura: ${pokemonData.height}</p>
-          <p>Peso: ${pokemonData.weight}</p>
-          <p>Experiência: ${pokemonData.base_experience}</p>
+          <p>Força: ${pokemonData.stats.find(stat => stat.stat.name === "attack").base_stat}</p>
+          <p>Defesa: ${pokemonData.stats.find(stat => stat.stat.name === "defense").base_stat}</p>
+          <p>Velocidade: ${pokemonData.stats.find(stat => stat.stat.name === "speed").base_stat}</p>
+          <p>Habilidade Especial: ${pokemonData.stats.find(stat => stat.stat.name === "special-attack").base_stat}</p>
         </footer>
       </div>
     `;

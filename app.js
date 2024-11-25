@@ -1,4 +1,4 @@
-const API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0';
+const API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=18&offset=0';
 const TYPE_URL = 'https://pokeapi.co/api/v2/type/';
 const pokedex = document.getElementById('pokedex');
 const typeFilter = document.getElementById('type-filter');
